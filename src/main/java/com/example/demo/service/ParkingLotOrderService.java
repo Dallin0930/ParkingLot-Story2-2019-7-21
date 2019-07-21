@@ -20,6 +20,7 @@ public class ParkingLotOrderService{
     ParkingLotRepository parkingLotRepository;
 
 
+
     @Transient
     public ParkingLotOrder addOrder(Long id, ParkingLotOrder order) {
         ParkingLot parkingLot = parkingLotRepository.findById(id).orElse(null);
@@ -38,15 +39,11 @@ public class ParkingLotOrderService{
     @Transient
     public ParkingLotOrder updateStatus(Long id) {
         ParkingLotOrder order = (ParkingLotOrder) parkingLotOrderRepository.findById(id).orElse(null);
-        order.setStatus("DESTROYED");
+        order.setStatus("used");
         ParkingLot parkingLot = order.getParkinglot();
         parkingLot.setCapacity(parkingLot.getCapacity()+1);
         return (ParkingLotOrder) parkingLotOrderRepository.save(order);
     }
-
-
-
-
 
 
 }
