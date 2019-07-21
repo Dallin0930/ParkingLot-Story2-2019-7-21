@@ -25,7 +25,7 @@ public class ParkingLotOrder {
         this.carId = carId;
     }
 
-    public long getOrderId() {
+    public long getOrderId(long l) {
         return orderId;
     }
 

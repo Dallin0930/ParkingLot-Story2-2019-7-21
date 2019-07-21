@@ -51,7 +51,7 @@ public class ParkingLot {
         this.location = location;
     }
 
-    public Long getId() {
+    public Long getId(long l) {
         return id;
     }
 

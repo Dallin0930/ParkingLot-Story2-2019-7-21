@@ -16,7 +16,6 @@ public class ParkingLotService {
 
     @Autowired
     private ParkingLotRepository parkingLotRepository;
-
     public List<ParkingLot> getParkingLots(Integer page, Integer pageSize) {
         return parkingLotRepository.findAll()
                 .stream()
@@ -32,4 +31,7 @@ public class ParkingLotService {
         }
         return parkingLotRepository.saveAndFlush(parkingLot1);
     }
+
+
+
 }

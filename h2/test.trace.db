@@ -1,0 +1,3 @@
+2019-07-21 11:09:42 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "PARKING_LOT" not found; SQL statement:
+alter table parking_lot add constraint UK_Capacity check(capacity >10) [42102-197]
