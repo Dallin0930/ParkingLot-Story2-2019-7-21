@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 
+//import com.example.demo.exception.NotEnoughCapacityException;
 import com.example.demo.exception.NotEnoughCapacityException;
 import com.example.demo.modle.ParkingLot;
 import com.example.demo.modle.ParkingLotOrder;
@@ -30,7 +31,11 @@ public class ParkingLotOrderService{
             order.setEnterTime(new Date().getTime());
             order.setStatus("ACTIVE");
         }else{
-            throw new NotEnoughCapacityException("停车场已经满");
+            try {
+                throw new NotEnoughCapacityException("停车场已经满");
+            } catch (NotEnoughCapacityException e) {
+                e.printStackTrace();
+            }
         }
         return (ParkingLotOrder) parkingLotOrderRepository.save(order);
     }
